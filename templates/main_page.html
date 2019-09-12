@@ -23,15 +23,15 @@
                             {% csrf_token %}
                             <fieldset>
                                 <legend>Сумма</legend>
-                                <p><input class="rounded" name="sum" type="range" min="0" max="20000"
-                                          onchange="document.getElementById('rangeValue').innerHTML = this.value + ' руб';"
+                                <p><input class="rounded" name="sum" type="range" min="5" max="55"
+                                          onchange="document.getElementById('rangeValue').innerHTML = this.value * 1000 + ' руб';"
                                           list="rangeList">
-                                    <span id="rangeValue">10000 руб</span></p>
+                                    <span id="rangeValue">30000 руб</span></p>
                                 <datalist id="rangeList">
-                                    <option value="5000" label="5000"></option>
-                                    <option value="10000" label="10000"></option>
-                                    <option value="15000" label="15000"></option>
-                                    <option value="20000" label="20000"></option>
+                                    <option value="5" label="5"></option>
+                                    <option value="10" label="10"></option>
+                                    <option value="15" label="15"></option>
+                                    <option value="20" label="20"></option>
                                 </datalist>
                             </fieldset>
                             <fieldset>
