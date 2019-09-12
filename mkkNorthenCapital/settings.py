@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +27,7 @@ SECRET_KEY = '02p8b2z3p7o6)b#6=$x%(8m%jg(@a&5=@&$ijecz&665-k1#x9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -121,6 +123,12 @@ USE_TZ = True
 
 STATIC_URL = '/assets/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "assets"),
-)
+#comment this
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, "assets"),
+# )
+# uncomment this
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
