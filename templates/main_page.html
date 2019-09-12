@@ -23,7 +23,7 @@
                             {% csrf_token %}
                             <fieldset>
                                 <legend>Сумма</legend>
-                                <p><input name="sum" type="range" min="0" max="20000"
+                                <p><input class="rounded" name="sum" type="range" min="0" max="20000"
                                           onchange="document.getElementById('rangeValue').innerHTML = this.value + ' руб';"
                                           list="rangeList">
                                     <span id="rangeValue">10000 руб</span></p>
@@ -36,7 +36,7 @@
                             </fieldset>
                             <fieldset>
                                 <legend>Срок</legend>
-                                <p><input name="term" type="range" min="1" max="31"
+                                <p><input class="rounded" name="term" type="range" min="1" max="31"
                                           onchange="document.getElementById('rangeValue1').innerHTML = this.value + ' дн'"
                                           list="rangeList2">
                                     <span id="rangeValue1">16 дн</span></p>
