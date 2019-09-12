@@ -1,0 +1,213 @@
+.invisible {
+    position: absolute;
+	visibility: hidden;
+    left: 20px;
+}
+
+option {
+    z-index: 99999999;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+/*gradient*/
+.img-gradient {
+  position:relative;
+  display:inline-block;
+}
+.img-gradient:after {
+  content:'';
+  position:absolute;
+  left:0; top:0;
+  width:100%; height:100%;
+  display:inline-block;
+  background: -moz-linear-gradient(top, rgba(0,10,10,0.5) 0%, rgba(0, 128, 128, 0.7) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0, 0, 0, 0.7)), color-stop(100%,rgba(0, 128, 128, 0.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,10,10,0.5) 0%,rgba(0, 128, 128, 0.7) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,10,10,0.5) 0%,rgba(0, 128, 128, 0.7) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,10,10,0.5) 0%,rgba(0, 128, 128, 0.7) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,10,10,0.5) 0%,rgba(0, 128, 128, 0.7) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+}
+.img-gradient img{
+  display:block;
+}
+
+.img-gradient-overlay { /* FF3.6+ */ /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(rgba(0,10,10,0.5) 0%, rgba(0, 128, 128, 0.7) 100%);
+  background: -o-linear-gradient(rgba(0,10,10,0.5) 0%, rgba(0, 128, 128, 0.7) 100%);
+  background: linear-gradient(rgba(0,10,10,0.5) 0%, rgba(0, 128, 128, 0.7) 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  border-radius: .3rem;
+}
+
+.img-gradient-overlay-dark { /* FF3.6+ */ /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(rgba(0,10,10,0.5) 0%, rgba(128, 128, 128, 0.7) 100%);
+  background: -o-linear-gradient(rgba(0,10,10,0.5) 0%, rgba(128, 128, 128, 0.7) 100%);
+  background: linear-gradient(rgba(0,10,10,0.5) 0%, rgba(10, 10, 10, 0.7) 100%); /* Chrome10+,Safari5.1+ */ /* Opera 11.10+ */ /* IE10+ */ /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002f4b', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  border-radius: .3rem;
+}
+
+/*gradient end*/
+/*
+
+slider style begin
+*/
+
+input[type="range"] {
+    width: 100%;
+    height: 28px; /* thumbHeight + (2 x thumbBorderWidth)*/
+    -webkit-appearance: none; /*remove the line*/
+    outline: none;
+    /*background-color:cyan;*/
+    border: 0; /*for firefox on android*/
+    padding: 0 8px; /*for IE*/
+    margin: 8px 0;
+}
+
+/*chrome and opera*/
+input[type="range"]::-webkit-slider-runnable-track {
+    background: #ccc; /*trackColor*/
+    height: 4px; /*trackHeight*/
+    border-radius: 4px; /*trackHeight*/
+    transition: 0.3s;
+}
+
+input[type="range"]:hover::-webkit-slider-runnable-track,
+input[type="range"]:focus::-webkit-slider-runnable-track {
+    background: #777; /*activeTrackColor*/
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: greenyellow; /*thumbColor*/
+    width: 28px; /* thumbHeight + (2 x thumbBorderWidth)*/
+    height: 28px; /* thumbHeight + (2 x thumbBorderWidth)*/
+    border-radius: 50%;
+    margin-top: -12px; /* -[thumbHeight + (2 x thumbBorderWidth) - trackHeight]/2*/
+    cursor: pointer;
+    border: 4px solid #fff; /*border-width should be equal to thumbBorderWidth if you want same border width across all browsers and border-color should match the background*/
+    transition: 0.3s;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb,
+input[type="range"]:focus::-webkit-slider-thumb {
+    background: darkOrange; /*activeThumbColor*/
+}
+
+/*firefox*/
+input[type="range"]::-moz-focus-outer {
+    border: 0;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #ccc; /*trackColor*/
+    height: 4px; /*trackHeight*/
+    border-radius: 4px; /*trackHeight*/
+    /*background isn't animatable, so can't use transition*/
+}
+
+input[type="range"]:hover::-moz-range-track,
+input[type="range"]:focus::-moz-range-track {
+    background: #777; /*activeTrackColor*/
+}
+
+input[type="range"]::-moz-range-thumb {
+    background: red; /*thumbColor*/
+    width: 20px; /*thumbHeight*/
+    height: 20px; /*thumbHeight*/
+    border-radius: 50%;
+    cursor: pointer;
+    border: 4px solid #fff; /*border-width = thumbBorderWidth, border-color should match the background*/
+}
+
+input[type="range"]:hover::-moz-range-thumb,
+input[type="range"]:focus::-moz-range-thumb {
+    background: darkOrange; /*activeThumbColor*/
+}
+
+input[type="range"]::-moz-range-progress {
+    background: red; /*thumbColor*/
+    border-radius: 4px; /*trackHeight*/
+    height: 4px; /*trackHeight*/
+}
+
+input[type="range"]:hover::-moz-range-progress,
+input[type="range"]:focus::-moz-range-progress {
+    background: darkOrange; /*activeThumbColor*/
+}
+
+/*edge and IE*/
+input[type="range"]::-ms-track {
+    background: #ccc; /*trackColor*/
+    height: 4px; /*trackHeight*/
+    border-radius: 4px; /*trackHeight*/
+    border: none;
+    color: transparent;
+}
+
+input[type="range"]:hover::-ms-track,
+input[type="range"]:focus::-ms-track {
+    background: #777; /*activeTrackColor*/
+}
+
+input[type="range"]::-ms-thumb {
+    background: red; /*thumbColor*/
+    width: 20px; /*thumbHeight*/
+    height: 20px; /*thumbHeight*/
+    border-radius: 50%;
+    border: none;
+    margin: 0 4px 0; /*0 thumbBorderWidth 0*/
+    box-shadow: 0 0 0 4px #fff; /*0 0 0 thumbBorderWidth #fff, box-shadow color should match the background*/
+    /*cursor:pointer; doesn't work*/
+}
+
+input[type="range"]:hover::-ms-thumb,
+input[type="range"]:focus::-ms-thumb {
+    background: darkOrange; /*activeThumbColor*/
+}
+
+input[type="range"]::-ms-tooltip {
+    display: none; /*tooltip makes thumb sliding lagy*/
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: red; /*thumbColor*/
+    border-radius: 4px; /*trackHeight*/
+}
+
+input[type="range"]:hover::-ms-fill-lower,
+input[type="range"]:focus::-ms-fill-lower {
+    background: darkOrange; /*activeThumbColor*/
+}
+
+.vertically-stacked-slider {
+    padding: 8px;
+}
+
+.vertically-stacked-slider > input[type="range"] {
+    padding: 0;
+}
+
+.horizontally-stacked-slider {
+    display: flex;
+    align-items: center;
+}
+
+.horizontally-stacked-slider > .title {
+    flex: 1;
+    padding: 8px;
+}
+
+.horizontally-stacked-slider > input[type="range"] {
+    flex: 1;
+}
+
+
+/*slider style end*/

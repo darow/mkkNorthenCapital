@@ -1,0 +1,16 @@
+{% extends 'extend.html' %}
+
+{% block registration %}
+    <div style="background-color: #cccccc; margin-top: 150px;" class="container py-2">
+        <div class="mx-auto">Ваши персональные данные:</div>
+    </div>
+    <div class="container border rounded py-3" style="background-color: #EEF2EF;">
+        <form class="site-form" action="/registration/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input name="sum" class="invisible" type="number" value="{{ sum }}">
+            <input name="term" class="invisible" type="number" value="{{ term }}">
+            <input type="submit" class="btn-success mr-auto " value="Отправить заявку">
+        </form>
+    </div>
+{% endblock %}

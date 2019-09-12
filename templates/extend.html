@@ -1,0 +1,82 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS --><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+{#    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">#}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/custom_style.css">
+    <title>MKK "Северная Столица"</title>
+</head>
+<body>
+<nav class="navbar navbar-default fixed-top navbar-expand-md bg-white inline-block navbar-light" >
+
+        <div class="containter navbar-collapse collapse w-100 order-1 order-md-0 collapse1 text-left">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Главная</a>
+                </li>
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="/tourist_visas">Туристические визы</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="/long-term_visas">Долгосрочные визы</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="/international_passport">Загранпаспорт</a>#}
+{#                </li>#}
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="/invitations">Приглашения</a>#}
+{#                </li>#}
+            </ul>
+        </div>
+        <div class="container flex-nowrap">
+            <div class="mr-auto order-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse1">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="ml-auto">
+                <a class="navbar-brand mx-auto" href="/">
+                    <img src="{% static "img/logo.png" %}" class="image" height="70" alt="logo">
+                </a>
+            </div>
+
+{#            <div class="ml-auto order-1">#}
+{#                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse2">#}
+{#                    <img src="{% static "../assets/img/user.svg" %}" class="image" height="30" alt="user">#}
+{#                </button>#}
+{#            </div>#}
+{#        </div>#}
+{#        <div class="navbar-collapse collapse w-100 order-3 collapse2 text-right">#}
+{#            <ul class="navbar-nav ml-auto">#}
+{#                {% if username %}#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link disabled" href="/account/logout/">{{ username }}</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="/account/logout/">Выйти</a>#}
+{#                    </li>#}
+{#                {% else %}#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="/account/login">Войти</a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="/account/register">Регистрация</a>#}
+{#                    </li>#}
+{#                {% endif %}#}
+{#            </ul>#}
+        </div>
+
+</nav>
+{% block main_page %} {% endblock %}
+{% block registration %} {% endblock %}
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'extend.html' %}
+{% load static %}
+
+{% block extrahead %}
+    <script src="assets/scripts/custom_script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+{% endblock extrahead %}
+
+{% block main_page %}
+    <div style="background: url('/assets/img/money_bgr.jpg');">
+        <div class="container h-100 mw-100 img-gradient-overlay">
+            {% if msg == 'accepted' %}
+                <div class="container text-center border border-primary"
+                     style="background-color: aquamarine; margin-top: 100px;">Ваша заявка принята
+                </div>
+            {% else %}
+                <div style="margin-top: 100px;"></div>
+            {% endif %}
+            <div class="container pt-4 text-light" style="margin-top: 30px; padding-bottom: 800px;">
+                <div class="row">
+                    <div class="col-6 ml-auto">
+                        <form action="/registration/" method="get">
+                            {% csrf_token %}
+                            <fieldset>
+                                <legend>Сумма</legend>
+                                <p><input name="sum" type="range" min="0" max="20000"
+                                          onchange="document.getElementById('rangeValue').innerHTML = this.value + ' руб';"
+                                          list="rangeList">
+                                    <span id="rangeValue">10000 руб</span></p>
+                                <datalist id="rangeList">
+                                    <option value="5000" label="5000"></option>
+                                    <option value="10000" label="10000"></option>
+                                    <option value="15000" label="15000"></option>
+                                    <option value="20000" label="20000"></option>
+                                </datalist>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Срок</legend>
+                                <p><input name="term" type="range" min="1" max="31"
+                                          onchange="document.getElementById('rangeValue1').innerHTML = this.value + ' дн'"
+                                          list="rangeList2">
+                                    <span id="rangeValue1">16 дн</span></p>
+                                <datalist id="rangeList2">
+                                    <option value="1" label="1">
+                                    <option value="6" label="6">
+                                    <option value="11" label="11">
+                                    <option value="16" label="16">
+                                    <option value="21" label="21">
+                                    <option value="26" label="26">
+                                    <option value="31" label="31">
+                                </datalist>
+                            </fieldset>
+                            <input type="submit" class="btn-success" value="Оформить заем">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
