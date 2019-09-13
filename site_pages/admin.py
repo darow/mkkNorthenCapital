@@ -1,4 +1,11 @@
 from django.contrib import admin
 from .models import Customer_request
+from django.contrib.auth.models import Group
 
-admin.site.register(Customer_request)
+@admin.register(Customer_request)
+class Customer_requestAdmin(admin.ModelAdmin):
+    list_display = ('name', 'surname', 'patronymic', 'phone', 'status', 'created')
+    list_filter = ('created', 'status')
+
+
+admin.site.unregister(Group)

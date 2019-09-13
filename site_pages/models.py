@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class Customer_request(models.Model):
@@ -9,6 +10,7 @@ class Customer_request(models.Model):
     amount_of_money = models.IntegerField(verbose_name="Сумма денег")
     loan_term = models.IntegerField(verbose_name="Срок выдачи (дней)")
     status = models.CharField(max_length=30, verbose_name="Статус", default="Ожидает рассмотрения")
+    created = models.DateTimeField( verbose_name="Время создания", default=timezone.now())
 
     class Meta:
         verbose_name_plural = 'Заявки клиентов'
