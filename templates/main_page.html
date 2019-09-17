@@ -18,6 +18,8 @@
             {% endif %}
             <div class="container pt-4 text-light" style="margin-top: 30px; padding-bottom: 800px;">
                 <div class="row">
+                    <div class="text-center font-weight-bolds text-success rounded-pill px-3" style="font-size: 32px; background-color: #f6f6f6">Наши предложения. Ваши возможности.<br>Здесь вы можете срочно взять займ</div>
+
                     <div class="col-6 ml-auto">
                         <form action="/registration/" method="get">
                             {% csrf_token %}
@@ -37,9 +39,9 @@
                             <fieldset>
                                 <legend>Срок</legend>
                                 <p><input class="rounded" name="term" type="range" min="1" max="31"
-                                          onchange="document.getElementById('rangeValue1').innerHTML = this.value + ' дн'"
+                                          onchange="document.getElementById('rangeValue1').innerHTML = 'На ' + this.value + ' дн'"
                                           list="rangeList2">
-                                    <span id="rangeValue1">16 дн</span></p>
+                                    <span id="rangeValue1">На 16 дн</span></p>
                                 <datalist id="rangeList2">
                                     <option value="1" label="1">
                                     <option value="6" label="6">
@@ -100,7 +102,6 @@
         </div>
     </div>
 
-{#    <div class="text-center font-weight-bolds pt-5" style="font-size: 32px;">Наши предложения. Ваши возможности.</div>#}
 
 
 
