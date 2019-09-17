@@ -12,6 +12,12 @@ class Customer_request(models.Model):
     status = models.CharField(max_length=30, verbose_name="Статус", default="Ожидает рассмотрения")
     created = models.DateTimeField( verbose_name="Время создания", default=timezone.now())
 
+    def __str__(self):
+        return self.name + self.surname + self.patronymic
+
+    def body_preview(self):
+        return self.phone
+
     class Meta:
         verbose_name_plural = 'Заявки клиентов'
 

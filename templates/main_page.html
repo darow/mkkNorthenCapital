@@ -7,14 +7,14 @@
 {% endblock extrahead %}
 
 {% block main_page %}
-    <div style="background: url('/assets/img/money_bgr.jpg');">
+    <div class="bg" style="background: url('/assets/img/money_bgr.jpg') no-repeat; background-position: bottom 8% left !important; height: 600px">
         <div class="container h-100 mw-100 img-gradient-overlay">
             {% if msg == 'accepted' %}
                 <div class="container text-center border border-primary"
-                     style="background-color: aquamarine; margin-top: 100px;">Ваша заявка принята
+                     style="background-color: aquamarine; margin-top: 87px;">Ваша заявка принята
                 </div>
             {% else %}
-                <div style="margin-top: 100px;"></div>
+                <div style="margin-top: 69px;"></div>
             {% endif %}
             <div class="container pt-4 text-light" style="margin-top: 30px; padding-bottom: 800px;">
                 <div class="row">
@@ -24,9 +24,9 @@
                             <fieldset>
                                 <legend>Сумма</legend>
                                 <p><input class="rounded" name="sum" type="range" min="5" max="55"
-                                          onchange="document.getElementById('rangeValue').innerHTML = this.value * 1000 + ' руб';"
+                                          onchange="document.getElementById('rangeValue').innerHTML = 'Вы берете ' + this.value * 1000 + ' руб';"
                                           list="rangeList">
-                                    <span id="rangeValue">30000 руб</span></p>
+                                    <span id="rangeValue">Вы берете 30000 руб</span></p>
                                 <datalist id="rangeList">
                                     <option value="5" label="5"></option>
                                     <option value="10" label="10"></option>
@@ -56,5 +56,161 @@
                 </div>
             </div>
         </div>
+    </div>
+    {# наполнение   #}
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-3 py-4" style="font-size: 32px; color: #df1a85; ">
+                Срочные займы
+            </div>
+            <div class="col-9">Северная столица предоставляет оперативную финансовую помощь в виде микрозайма российским
+                гражданам, вне зависимости от их уровня доходов, причем делает это наиболее быстрым и удобным способом -
+                онлайн. Микрозайм с Северная столица можно оформить менее чем за 30 минут, заемщик получает решение
+                практически мгновенно, а деньги перечисляются на карту сразу после одобрения заявки и подписания Вами
+                оферты!
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-4 ">
+                <h3 class="text-success pb-3">ПРЕИМУЩЕСТВА МИКРОЗАЙМОВ</h3>
+                <div>Срочный заём денег без справок и поручителей: мы полностью доверяем своим клиентам. Северная столица
+                    предоставляет деньги в заем российским гражданам, вне зависимости от их уровня доходов. Причем
+                    делает это наиболее быстрым и удобным способом - онлайн. Микрозайм с Северная столица оформляется в
+                    течение получаса: вы получаете решение по кредиту практически сразу, а деньги зачисляются на карту
+                    мгновенно – как только вы получаете одобрение заявки и подписываете оферту! Еще никогда срочные
+                    займы денег онлайн не были такими простыми и удобными. Никакой бумажной волокиты. Никаких очередей и
+                    долгого ожидания. Уже через полчаса после отправки заявки на займ онлайн вы можете распоряжаться
+                    полученными деньгами!
+                </div>
+            </div>
+            <div class="col-8">
+                <div class=" border border-success">
+                    <h3 class="text-success p-3">Микрозайм – возьми деньги в долг до зарплаты!</h3>
+                    <div class="p-3">Когда у вас не хватает денег, притом, что они нужны срочно, - быстрый микрозайм у Северная столицы
+                        онлайн
+                        может стать вашим спасательным кругом. Взять в долг у друзей не всегда возможно, а оформление
+                        кредита в банке – процедура не на один день. Чтобы подать заявку на срочный займ денег в Green
+                        Money, вам необходимо всего лишь: • паспорт, • доступ в интернет, • мобильный телефон и карта
+                        банка
+                        на ваше имя. Не выходя из дома, вы можете получить необходимую вам сумму денег меньше, чем за
+                        полчаса! Микрозаймы у Северной столицы - это настолько срочно, насколько вообще возможно!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center font-weight-bolds pt-5" style="font-size: 32px;">Наши предложения. Ваши возможности.</div>
+
+
+
+    <div class="text-center font-weight-bolds pt-5" style="font-size: 32px;">Отзывы клиентов о Северной столице</div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators  pb-3">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+        <div class="carousel-inner py-4">
+            <div class="carousel-item active">
+                <div class="container border rounded bg-secondary text-light py-3">
+                    <div class="row">
+                        <div class="col font-weight-bold" style="font-size: 20px;">Александр</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-light">36 лет, г. Санкт-Петербург </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col font-weight-bold">Среди большого количества финансовых компаний выбрал именно
+                            Северную Столицу из-за Программы привилегий. Взял уже несколько займов, и у меня теперь
+                            скидка 15%. Деньги переводят оперативно, не приходится долго ждать. Всегда советую друзьям и
+                            знакомым эту компанию.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="container border rounded bg-secondary text-light py-3">
+                    <div class="row">
+                        <div class="col font-weight-bold" style="font-size: 20px;">Яна</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-light">27 лет, г. Красноярск </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col font-weight-bold">Никогда бы не подумала, что буду пользоваться займами, но в безвыходных ситуациях, когда
+                            денег нет и обратиться больше не к кому, остается только один вариант - взять заем. Я читала
+                            про разные компании, но остановила свой выбор на Северной столице. Мне понравилось то, что
+                            они очень быстро переводят деньги на QIWI-Кошелек, а я им пользуюсь постоянно. На все
+                            процедуры получения займа я трачу около 10 минут максимум!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="container border rounded bg-secondary text-light py-3">
+                    <div class="row">
+                        <div class="col font-weight-bold" style="font-size: 20px;">Евгений</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-light">29 лет, г. Омск </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col font-weight-bold">Для меня Северная столица - это мой спасательный круг, когда я остаюсь на мели. Почти
+                            каждый месяц беру здесь заем до зарплаты. Заявку одобряют сразу, а деньги переводят
+                            буквально через 5-7 минут. Пока что для себя не нашел сервиса удобнее и оперативнее, чем
+                            они.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container border rounded bg-secondary text-light py-3">
+                    <div class="row">
+                        <div class="col font-weight-bold" style="font-size: 20px;">Татьяна</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-light">30 лет, г. Тюмень </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col font-weight-bold">С Раньше относилась к займам очень скептически и сомневалась, что через интернет вообще
+                            можно получить деньги. Но в жизни произошла ситуация, которая вынудила меня оформить заем
+                            очень срочно. По этой причине обратилась в Северную столицу, так как слышала про эту
+                            компанию от коллег на работе. У меня была не очень хорошая кредитная история, поэтому я
+                            очень переживала, что мне не одобрят даже тысячу. Но к моему великому счастью, мне одобрили
+                            именно ту сумму, на которую я и рассчитывала. Займ потом погасила вовремя. После этого у
+                            меня кардинально изменилось отношение к займам, а компания Северная столица для меня стала
+                            палочкой-выручалочкой. И теперь иногда здесь беру небольшие суммы.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="container border rounded bg-secondary text-light py-3">
+                    <div class="row">
+                        <div class="col font-weight-bold" style="font-size: 20px;">Марина</div>
+                    </div>
+                    <div class="row">
+                        <div class="col text-light">34 года, г. Самара </div>
+                    </div>
+                    <div class="row pt-3">
+                        <div class="col font-weight-bold">В Северную столицу обратилась впервые. Очень порадовала скидка 25% на первый заем.
+                            Получилось действительно очень выгодно. Главное, что деньги я получила очень быстро,
+                            потратила буквально 10 минут.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
     </div>
 {% endblock %}

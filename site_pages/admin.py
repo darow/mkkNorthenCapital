@@ -6,6 +6,7 @@ from django.contrib.auth.models import Group
 class Customer_requestAdmin(admin.ModelAdmin):
     list_display = ('name', 'surname', 'patronymic', 'phone', 'status', 'created')
     list_filter = ('created', 'status')
+    search_fields = ('name', 'surname', 'patronymic', 'phone')
 
 
 admin.site.unregister(Group)

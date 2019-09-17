@@ -2,7 +2,7 @@ from django.shortcuts import render_to_response, redirect, HttpResponse
 from django.template.context_processors import csrf
 from .forms import Customer_form
 from django.template import RequestContext
-
+from django.http import FileResponse
 
 
 # from django.views.decorators.csrf import csrf_protect
@@ -34,7 +34,7 @@ def registration(request):
         form = Customer_form(request.POST)
         if form.is_valid():
             client = form.save(commit=False)
-            client.amount_of_money = sum
+            client.amount_of_money = sum * 1000
             client.loan_term = term
             client.save()
             response = redirect('/')
@@ -45,3 +45,6 @@ def registration(request):
         args = {'form': form, 'sum': request.GET['sum'], 'term': request.GET['term']}
         args.update(csrf(request))
         return render_to_response('registration.html', args)
+
+
+# def some_view(request):
