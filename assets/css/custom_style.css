@@ -1,3 +1,36 @@
+@media (min-width: 0px) {
+    h1 {
+        font-size: 26px;
+    }
+}
+@media (min-width: 320px) {
+    h1 {
+        font-size: 28px;
+    }
+}
+@media (min-width: 480px) {
+    h1 {
+        font-size: 30px;
+    }
+}
+@media (min-width: 768px) {
+    h1 {
+        font-size: 34px;
+    }
+}
+/* на md */
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 37px;
+    }
+}
+/* на lg */
+@media (min-width: 1224px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+
 a:hover {
     background: #ffefef;
 }
@@ -6,7 +39,7 @@ a {
     color: #ffefef;
 }
 
-div {
+body {
     font-family: Ubuntu,Calibri,Candara,Segoe,'Segoe UI',Optima,Arial,sans-serif;
 }
 
