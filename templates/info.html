@@ -1,0 +1,24 @@
+{% extends 'extend.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id="info_bg">
+    <div class="container-fluid px-lg-5 text-shadow text-light">
+        <div class="row pt-10">
+            <div class="col text-center">
+                <h1>Информация для клиентов</h1>
+            </div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-sm-6 col-md-4 p-3"><a href="{% static 'pdf/1Базовый стандарт защиты прав и интересов физических и юридич.pdf' %}" class="flex-fill btn btn-basic vw32 bg-light">Базовый стандарт защиты прав и интересов физических и юридических лиц</a></div>
+            <div class="col-sm-6 col-md-4 p-3"><a href="{% static 'pdf/3Федеральный закон от 03.07.2016 N 230-ФЗ (ред. от 26.07.2019_2019.pdf' %}" class="flex-fill btn btn-primary vw32">Федеральный закон от 03.07.2016 N 230-ФЗ (ред. от 26.07.2019_2019)</a></div>
+            <div class="col-sm-6 col-md-4 p-3"><a href="{% static 'pdf/2Базовый стандарт совершения микрофинансовой организацией опе.pdf' %}" class="flex-fill btn btn-success vw32">Базовый стандарт совершения операций микрофинансовой организацией</a></div>
+            <div class="col-sm-6 col-md-4 p-3"><a href="{% static 'pdf/4Банковская азбука потребительский кредит (заем) от ЦБ РФ.pdf' %}" class="flex-fill btn btn-info vw32">Банковская азбука потребительский кредит (заем) от ЦБ РФ</a></div>
+            <div class="col-sm-6 col-md-4 p-3"><a href="{% static 'pdf/5Памятке заемщика по потребительскому кредиту от ЦБ РФ.pdf' %}" class="flex-fill btn btn-warning vw32">Памятка заемщика по потребительскому кредиту от ЦБ РФ</a></div>
+            <div class="col-sm-6 col-md-4 p-3"><a href="{% static 'pdf/6Признаки финансовой пирамиды от ЦБ РФ.pdf' %}" class="flex-fill btn btn-danger vw32">Признаки финансовой пирамиды от ЦБ РФ</a></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -6,29 +6,32 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link rel="stylesheet" href="/assets/css/custom_style.css">
     <title>Срочные займы MKK "Северная Столица"</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<nav class="navbar fixed-top navbar-expand-md bg-white navbar-light py-0" style="opacity: 0.7;" >
+<nav class="navbar fixed-top navbar-expand-md bg-white navbar-light py-0" style="opacity: 0.8;" >
     <div class="containter navbar-collapse collapse w-100 order-0 collapse1 text-left inline">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/help">Справка</a>
+        <ul class="navbar-nav mr-auto" >
+            <li class="nav-item {{ info }}" style="opacity: 1;">
+                <a class="nav-link text-nowrap" href="/info">Информация для клиентов</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/tourist_visas">Акции</a>
+            <li class="nav-item {{ about_us }}">
+                <a class="nav-link text-nowrap" href="/about_us">О компании</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/to_investors">Инвесторам</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" style="white-space: nowrap;" href="/about_us">О компании</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="/contacts">Контакты</a>
-            </li>
+            <!--            <li class="nav-item">-->
+            <!--                <a class="nav-link" href="/tourist_visas">Акции</a>-->
+            <!--            </li>-->
+            <!--            <li class="nav-item">-->
+            <!--                <a class="nav-link" href="/to_investors">Инвесторам</a>-->
+            <!--            </li>-->
+            <!--            <li class="nav-item">-->
+            <!--                <a class="nav-link active" href="/contacts">Контакты</a>-->
+            <!--            </li>-->
         </ul>
     </div>
     <div class="container flex-nowrap">
@@ -62,8 +65,8 @@
             <li class="nav-item">
                 <a class="nav-link" href="/account/login">Войти</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/account/register">Регистрация</a>
+            <li class="nav-item {{ registration }}">
+                <a class="nav-link" href="/registration">Регистрация</a>
             </li>
             {% endif %}
         </ul>
@@ -71,8 +74,7 @@
 
 </nav>
 
-{% block main_page %} {% endblock %}
-{% block registration %} {% endblock %}
+{% block content %} {% endblock %}
 
 <!-- Footer -->
 <footer class="page-footer font-small blue pt-4" style="background: deepskyblue;">
@@ -95,6 +97,7 @@
                 <img class="d-md-inline" src="{% static 'img/call.svg' %}" height="20px">
 
                 <p class="d-md-inline">89217573731</p>
+                <p class="pt-2">Режим работы: пн-пт с 09-00 до 19-00<p/>
             </div>
 
             <!-- Grid column -->

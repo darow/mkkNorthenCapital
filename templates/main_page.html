@@ -6,105 +6,102 @@
 <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>-->
 {% endblock extrahead %}
 
-{% block main_page %}
+{% block content %}
 <!--background-position: bottom 8% left !important;-->
-    <div class="bg" style="background: url('/assets/img/spb_horseman.jpg')  no-repeat  top left; background-size: cover;">
-        <div class="container h-100 mw-100 img-gradient-overlay">
-            {% if msg == 'accepted' %}
-                <div class="container text-center border border-primary"
-                     style="background-color: aquamarine; margin-top: 87px;">Ваша заявка принята
-                </div>
-
-            {% endif %}
-            <div class="container pt-4 text-light mr-auto">
-                <div class="row">
-                    <h2 class="text-center font-weight-bolds text-info rounded-pill px-5 mr-auto"
-                         style="margin-top: 70px; background-color: rgba(255, 255, 255, 0.7);">Наши предложения -
-                        Ваши возможности<br>Здесь вы можете срочно взять займ</h2>
-
-                    <div class="col-6 ml-auto">
-                        <form class="p-5" action="/registration/" method="get">
-                            {% csrf_token %}
-                            <fieldset>
-                                <legend>Сумма</legend>
-                                <p><input class="rounded" name="sum" type="range" min="5" max="55"
-                                          onchange="document.getElementById('rangeValue').innerHTML = 'Вы берете ' +
-                                           this.value * 1000 + ' руб';"
-                                          list="rangeList">
-                                    <span id="rangeValue">Вы берете 30000 руб</span></p>
-                                <datalist id="rangeList">
-                                    <option value="5" label="5"></option>
-                                    <option value="10" label="10"></option>
-                                    <option value="15" label="15"></option>
-                                    <option value="20" label="20"></option>
-                                </datalist>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Срок</legend>
-                                <p><input class="rounded" name="term" type="range" min="1" max="31"
-                                          onchange="document.getElementById('rangeValue1').innerHTML = 'На ' +
-                                          this.value + ' дн'"
-                                          list="rangeList2">
-                                    <span id="rangeValue1">На 16 дн</span></p>
-                                <datalist id="rangeList2">
-                                    <option value="1" label="1">
-                                    <option value="6" label="6">
-                                    <option value="11" label="11">
-                                    <option value="16" label="16">
-                                    <option value="21" label="21">
-                                    <option value="26" label="26">
-                                    <option value="31" label="31">
-                                </datalist>
-                            </fieldset>
-                            <input type="submit" class="btn-success" value="Оформить заем">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div id="bg_main">
+    {% if msg == 'accepted' %}
+    <div class="container text-center border border-primary"
+         style="background-color: aquamarine; margin-top: 87px;">Ваша заявка принята
     </div>
 
-    <div class="container d-flex align-content-around flex-wrap p-5">
+    {% endif %}
+    <div class="container-fluid pt-4 text-light text-shadow">
         <div class="row">
-            <div class="col-3 py-4" style="font-size: 32px; color: #df1a85; ">
-                Срочные займы
+            <div class="col-12 col-md-6 col-xl-5 pt-5 pt-md-0 my-md-auto">
+                <h1 class="text-center font-weight-bolds px-5 mr-auto ">Укажите размер и срок займа</h1>
             </div>
-            <div class="col-9">Северная столица предоставляет оперативную финансовую помощь в виде микрозайма российским
-                гражданам, вне зависимости от их уровня доходов, причем делает это наиболее быстрым и удобным способом -
-                онлайн. Микрозайм с Северная столица можно оформить менее чем за 30 минут, заемщик получает решение
-                практически мгновенно, а деньги перечисляются на карту сразу после одобрения заявки и подписания Вами
-                оферты!
+            <div class="col-12 col-md-6 col-xl-7">
+                <form class="py-5" action="/create_customer_request/" method="get">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Сумма</legend>
+                        <p><input class="rounded" name="sum" type="range" min="5" max="55"
+                                  onchange="document.getElementById('rangeValue').innerHTML = 'Вы берете ' +
+                                           this.value * 1000 + ' руб';"
+                                  list="rangeList">
+                            <span id="rangeValue">Вы берете 30000 руб</span></p>
+                        <datalist id="rangeList">
+                            <option value="5" label="5"></option>
+                            <option value="10" label="10"></option>
+                            <option value="15" label="15"></option>
+                            <option value="20" label="20"></option>
+                        </datalist>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Срок</legend>
+                        <p><input class="rounded" name="term" type="range" min="1" max="31"
+                                  onchange="document.getElementById('rangeValue1').innerHTML = 'На ' +
+                                          this.value + ' дн'"
+                                  list="rangeList2">
+                            <span id="rangeValue1">На 16 дн</span></p>
+                        <datalist id="rangeList2">
+                            <option value="1" label="1">
+                            <option value="6" label="6">
+                            <option value="11" label="11">
+                            <option value="16" label="16">
+                            <option value="21" label="21">
+                            <option value="26" label="26">
+                            <option value="31" label="31">
+                        </datalist>
+                    </fieldset>
+                    <input type="submit" class="btn-success" value="Оформить заем">
+                </form>
             </div>
         </div>
-        <div class="row pt-3">
-            <div class="col-4 ">
-                <h3 class="text-success pb-3">ПРЕИМУЩЕСТВА МИКРОЗАЙМОВ</h3>
-                <div>Срочный заём денег без справок и поручителей: мы полностью доверяем своим клиентам. Северная столица
-                    предоставляет деньги в заем российским гражданам, вне зависимости от их уровня доходов. Причем
-                    делает это наиболее быстрым и удобным способом - онлайн. Микрозайм с Северная столица оформляется в
-                    течение получаса: вы получаете решение по кредиту практически сразу, а деньги зачисляются на карту
-                    мгновенно – как только вы получаете одобрение заявки и подписываете оферту! Еще никогда срочные
-                    займы денег онлайн не были такими простыми и удобными. Никакой бумажной волокиты. Никаких очередей и
-                    долгого ожидания. Уже через полчаса после отправки заявки на займ онлайн вы можете распоряжаться
-                    полученными деньгами!
-                </div>
+    </div>
+</div>
+
+<div class="container d-flex align-content-around flex-wrap p-5 text-center text-md-left">
+    <div class="row">
+        <div class="col-md-3 py-4" style="font-size: 32px; color: #df1a85; ">
+            Срочные займы
+        </div>
+        <div class="col-md-9">Северная столица предоставляет оперативную финансовую помощь в виде микрозайма российским
+            гражданам, вне зависимости от их уровня доходов, причем делает это наиболее быстрым и удобным способом -
+            онлайн. Микрозайм с Северная столица можно оформить менее чем за 30 минут, заемщик получает решение
+            практически мгновенно, а деньги перечисляются на карту сразу после одобрения заявки и подписания Вами
+            оферты!
+        </div>
+    </div>
+    <div class="row pt-3">
+        <div class="col-md-6 ">
+            <h3 class="text-success pb-3">ПРЕИМУЩЕСТВА МИКРОЗАЙМОВ</h3>
+            <div>Срочный заём денег без справок и поручителей: мы полностью доверяем своим клиентам. Северная столица
+                предоставляет деньги в заем российским гражданам, вне зависимости от их уровня доходов. Причем
+                делает это наиболее быстрым и удобным способом - онлайн. Микрозайм с Северная столица оформляется в
+                течение получаса: вы получаете решение по кредиту практически сразу, а деньги зачисляются на карту
+                мгновенно – как только вы получаете одобрение заявки и подписываете оферту! Еще никогда срочные
+                займы денег онлайн не были такими простыми и удобными. Никакой бумажной волокиты. Никаких очередей и
+                долгого ожидания. Уже через полчаса после отправки заявки на займ онлайн вы можете распоряжаться
+                полученными деньгами!
             </div>
-            <div class="col-8">
-                <div class=" border border-success">
-                    <h3 class="text-success p-3">Микрозайм – возьми деньги в долг до зарплаты!</h3>
-                    <div class="p-3">Когда у вас не хватает денег, притом, что они нужны срочно, - быстрый микрозайм у Северная столицы
-                        онлайн
-                        может стать вашим спасательным кругом. Взять в долг у друзей не всегда возможно, а оформление
-                        кредита в банке – процедура не на один день. Чтобы подать заявку на срочный займ денег в Green
-                        Money, вам необходимо всего лишь: • паспорт, • доступ в интернет, • мобильный телефон и карта
-                        банка
-                        на ваше имя. Не выходя из дома, вы можете получить необходимую вам сумму денег меньше, чем за
-                        полчаса! Микрозаймы у Северной столицы - это настолько срочно, насколько вообще возможно!
-                    </div>
+        </div>
+        <div class="col-md-6">
+            <div class=" border border-success">
+                <h3 class="text-success p-3">Микрозайм – возьми деньги в долг до зарплаты!</h3>
+                <div class="p-3">Когда у вас не хватает денег, притом, что они нужны срочно, - быстрый микрозайм у Северная столицы
+                    онлайн
+                    может стать вашим спасательным кругом. Взять в долг у друзей не всегда возможно, а оформление
+                    кредита в банке – процедура не на один день. Чтобы подать заявку на срочный займ денег в Green
+                    Money, вам необходимо всего лишь: • паспорт, • доступ в интернет, • мобильный телефон и карта
+                    банка
+                    на ваше имя. Не выходя из дома, вы можете получить необходимую вам сумму денег меньше, чем за
+                    полчаса! Микрозаймы у Северной столицы - это настолько срочно, насколько вообще возможно!
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 
 

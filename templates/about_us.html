@@ -1,67 +1,81 @@
 {% extends 'extend.html' %}
 {% load static %}
 
-{% block main_page %}
+{% block content %}
 
-<div class="bg" style="background: url('/assets/img/spb_bridge.jpg')  no-repeat  top left; background-size: cover;">
-    <div class="border border-dark" style="background-color: rgb(0,0,0,0.7)">
-        <div class="container  text-light text-center py-5" style="margin-top: 100px;">
-            <div class="row ">
-                <div class="col">
-                    <h1>ООО МКК Северная столица</h1>
-                </div>
+<!--ОБЩЕДОСТУПНЫЕ ДАННЫЕ-->
+<div id="bg_about_us">
+    <div class="container text-light text-shadow">
+        <div class="row pt-10">
+            <div class="col text-center">
+                <h1>ООО МКК Северная столица</h1>
             </div>
-            <div class="row  ml-auto text-left pt-5">
-                <p class="col">Общедоступные данные о нас:</p>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="container" >
-                        <div class="row">
-                            <img src="{% static 'img/document.svg' %}" alt="" class="d-md-inline mr-4" height="50px">
-                            <div class="d-md-inline text-md-left">
-                                <h4 class="text-weight-bold m-0">ОГРН</h4>
-                                <p>1197847172720</p>
-                            </div>
+        </div>
+        <div class="row  ml-auto text-left py-2 py-md-5">
+            <h2 class="col text">Общедоступные данные о нас:</h2>
+        </div>
+        <div class="row">
+            <div class="col-md">
+                <div class="container-fluid" >
+                    <div class="row">
+                        <img src="{% static 'img/document.svg' %}" alt="" class="d-md-inline mr-4" height="50px">
+                        <div class="d-md-inline text-md-left width-282">
+                            <h4 class="text-weight-bold m-0">ОГРН</h4>
+                            <p>1197847172720</p>
                         </div>
-                        <div class="row">
-                            <img src="{% static 'img/document.svg' %}" alt="" class="d-md-inline mr-4" height="50px">
-                            <div class="d-md-inline text-md-left">
-                                <h4 class="text-weight-bold m-0">ИНН</h4>
-                                <p>7842174272</p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <img src="{% static 'img/document.svg' %}" alt="" class="d-md-inline mr-4" height="50px">
+                        <div class="d-md-inline text-md-left width-282">
+                            <h4 class="text-weight-bold m-0">ИНН</h4>
+                            <p>7842174272</p>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <container>
-                        <div class="row">
-                            <img src="{% static 'img/document.svg' %}" alt="" class="d-md-inline mr-4" height="50px">
-                            <div class="d-md-inline text-md-left">
-                                <h4 class="text-weight-bold m-0">КПП</h4>
-                                <p>784201001</p>
-                            </div>
+            </div>
+            <div class="col-md">
+                <div class="container-fluid">
+                    <div class="row">
+                        <img src="{% static 'img/document.svg' %}" alt="" class="d-md-inline mr-4" height="50px">
+                        <div class="d-md-inline text-md-left width-282">
+                            <h4 class="text-weight-bold m-0">КПП</h4>
+                            <p>784201001</p>
                         </div>
-                        <div class="row">
-                            <img src="{% static 'img/document.svg' %}" alt="" class="d-md-inline mr-4" height="50px">
-                            <div class="d-md-inline text-md-left">
-                                <h4 class="text-weight-bold m-0">дата регистрации Общества</h4>
-                                <p>22.08.2019 г.</p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <img src="{% static 'img/document.svg' %}" alt="" class="d-md-inline mr-4" height="50px">
+                        <div class="d-md-inline text-md-left">
+                            <h4 class="text-weight-bold m-0">дата регистрации общества</h4>
+                            <p>22.08.2019 г.</p>
                         </div>
-                    </container>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!--СВИДЕТЕЛЬСТВО И ЕГРЮЛ-->
+<div class="container jumbotron  text-center mt-1">
+    <div class="row">
+        <h1 class="col">Документация</h1>
+    </div>
+    <div class="row ">
+        <div class="col-md-6 p-5"><a class="btn btn-success" href="/pdf/Выписка ЕГРЮЛ.pdf">Выписка ЕГРЮЛ</a></div>
+        <div class="col-md-6 p-5"><a class="btn btn-success"href="/pdf/Свидетельство ИНН.pdf">Свидетельство ИНН</a></div>
+    </div>
+</div>
+
+<!--КАРТА-->
 <div class="container py-3 pl-0 text-md-left text-center">
     <div class="row">
         <div class="col-md-9 py-2">
             <h5 class="text-weight-bold"> Наш адрес: </h5>
             191317, г. Санкт-Петербург, площадь Александра Невского, дом 2, литер Е, помещ/офис 5-Н/648, офис расположен на
             шестом этаже третьего подъезда здания
+            <p class="pt-2">Режим работы: пн-пт с 09-00 до 19-00<p/>
         </div>
+
         <div class="col-md-3 py-2 my-auto">
             <a class="btn btn-warning d-md-inline text-nowrap" href="https://yandex.ru/maps/?um=constructor%3A073cb1b29712bfb3fdb20f38a471fbfb1be22c7b36efa422123c286c2972aaf8&source=constructorLink">Перейти в Яндекс Карты</a>
         </div>
