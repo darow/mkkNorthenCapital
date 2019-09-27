@@ -82,6 +82,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+        #           'postgresql',
+        # 'NAME': 'mkksever',
+        # 'USER': 'user',
+        # 'PASSWORD': '1',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '5432',
     }
 }
 
@@ -108,9 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'europe/moscow'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
