@@ -2,66 +2,67 @@
 {% load static %}
 
 {% block extrahead %}
-    <!--    <script src="assets/scripts/custom_script.js"></script>-->
-    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>-->
+    <link rel="stylesheet" href="/assets/css/main_page.css">
 {% endblock extrahead %}
 
 {% block content %}
     <!--background-position: bottom 8% left !important;-->
     <div id="bg_main">
-        {% if msg == 'accepted' %}
-            <div class="container text-center border border-primary"
-                 style="background-color: aquamarine; margin-top: 87px;">Ваша заявка принята
-            </div>
-        {% endif %}
-
-        {% if msg == 'register-success' %}
-            <div class="container text-center border border-primary"
-                 style="background-color: aquamarine; margin-top: 87px;">Вы успешно зарегистрировались
-            </div>
-
-        {% endif %}
-        <div class="container-fluid pt-4 text-light text-shadow">
-            <div class="row">
-                <div class="col-12 col-md-6 col-xl-5 pt-5 pt-md-0 my-md-auto">
-                    <h1 class="text-center font-weight-bolds px-5 mr-auto ">Укажите размер и срок займа</h1>
+        <div id="bg_darked">
+            {% if msg == 'accepted' %}
+                <div class="container text-center border border-primary"
+                     style="background-color: aquamarine; margin-top: 87px;">Ваша заявка принята
                 </div>
-                <div class="col-12 col-md-6 col-xl-7">
-                    <form class="py-5" action="/create_customer_request/" method="get">
-                        {% csrf_token %}
-                        <fieldset>
-                            <legend>Сумма</legend>
-                            <p><input class="rounded" name="sum" type="range" min="5" max="55"
-                                      onchange="document.getElementById('rangeValue').innerHTML = 'Вы берете ' +
+            {% endif %}
+
+            {% if msg == 'register-success' %}
+                <div class="container text-center border border-primary"
+                     style="background-color: aquamarine; margin-top: 87px;">Вы успешно зарегистрировались
+                </div>
+
+            {% endif %}
+            <div class="container-fluid h-100 pt-4 text-light text-shadow d-flex flex-column justify-content-center ">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-xl-5 pt-5 pt-md-0 my-md-auto">
+                        <h1 class="text-center font-weight-bolds px-5 mr-auto ">Укажите размер и срок займа</h1>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-7">
+                        <form class="py-5" action="/create_customer_request/" method="get">
+                            {% csrf_token %}
+                            <fieldset>
+                                <legend>Сумма</legend>
+                                <p><input class="rounded" name="sum" type="range" min="5" max="55"
+                                          onchange="document.getElementById('rangeValue').innerHTML = 'Вы берете ' +
                                            this.value * 1000 + ' руб';"
-                                      list="rangeList">
-                                <span id="rangeValue">Вы берете 30000 руб</span></p>
-                            <datalist id="rangeList">
-                                <option value="5" label="5"></option>
-                                <option value="10" label="10"></option>
-                                <option value="15" label="15"></option>
-                                <option value="20" label="20"></option>
-                            </datalist>
-                        </fieldset>
-                        <fieldset>
-                            <legend>Срок</legend>
-                            <p><input class="rounded" name="term" type="range" min="1" max="31"
-                                      onchange="document.getElementById('rangeValue1').innerHTML = 'На ' +
+                                          list="rangeList">
+                                    <span id="rangeValue">Вы берете 30000 руб</span></p>
+                                <datalist id="rangeList">
+                                    <option value="5" label="5"></option>
+                                    <option value="10" label="10"></option>
+                                    <option value="15" label="15"></option>
+                                    <option value="20" label="20"></option>
+                                </datalist>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Срок</legend>
+                                <p><input class="rounded" name="term" type="range" min="1" max="31"
+                                          onchange="document.getElementById('rangeValue1').innerHTML = 'На ' +
                                           this.value + ' дн'"
-                                      list="rangeList2">
-                                <span id="rangeValue1">На 16 дн</span></p>
-                            <datalist id="rangeList2">
-                                <option value="1" label="1">
-                                <option value="6" label="6">
-                                <option value="11" label="11">
-                                <option value="16" label="16">
-                                <option value="21" label="21">
-                                <option value="26" label="26">
-                                <option value="31" label="31">
-                            </datalist>
-                        </fieldset>
-                        <input type="submit" class="btn-success" value="Оформить заем">
-                    </form>
+                                          list="rangeList2">
+                                    <span id="rangeValue1">На 16 дн</span></p>
+                                <datalist id="rangeList2">
+                                    <option value="1" label="1">
+                                    <option value="6" label="6">
+                                    <option value="11" label="11">
+                                    <option value="16" label="16">
+                                    <option value="21" label="21">
+                                    <option value="26" label="26">
+                                    <option value="31" label="31">
+                                </datalist>
+                            </fieldset>
+                            <input type="submit" class="btn btn-success rounded-pill font-weight-bold p-2 px-5 font-20" value="Оформить заем">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>

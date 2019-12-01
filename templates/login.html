@@ -1,0 +1,28 @@
+{% extends 'extend.html' %}
+
+{% block title %}Войти{% endblock %}
+
+{% block content %}
+    {% if msg %}
+        <div style="padding-top: 80px;">
+            <div class="col-12 text-center border border-primary main_page_msg" style=" background: red !important;">{{ msg }}
+            </div>
+        </div>
+    {% endif %}
+    <div style="background-color: #cccccc; margin-top: 100px;" class="container py-2">
+        <h2>Вход</h2>
+    </div>
+    <div class="container border rounded py-3 mb-2" style="background-color: #EEF2EF;">
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="fieldWrapper">
+                    <div class="pt-2">{{ field.label_tag }}</div>
+                    {{ field }}
+                    <div class="text-danger">{{ field.errors }}</div>
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-success mt-2">Войти</button>
+        </form>
+    </div>
+{% endblock content %}

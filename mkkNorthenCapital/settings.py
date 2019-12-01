@@ -137,12 +137,16 @@ USE_TZ = True
 
 STATIC_URL = '/assets/'
 
+STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, "assets"),
+    )
 
 # uncomment this
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# db_from_env = dj_database_url.config()
+# DATABASES['default'].update(db_from_env)
+
 # # This should already be in your settings.py
 # DATABASES = {}
 # DATABASES['default'] = dj_database_url.config(conn_max_age=600)

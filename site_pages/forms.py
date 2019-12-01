@@ -1,6 +1,14 @@
 from django.forms import ModelForm, CharField, Form, PasswordInput
 from .models import CustomerRequest, MyUser
 from django import forms
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, AuthenticationForm
+from .models import MyUser
+
+
+class CustomUserAuthForm(AuthenticationForm):
+    class Meta:
+        model = MyUser
+        fields = ('username', 'password')
 
 
 class CustomerRequestForm(ModelForm):
